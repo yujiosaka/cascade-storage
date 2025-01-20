@@ -1,0 +1,77 @@
+{
+  "name": "cascade-storage",
+  "version": "0.0.1",
+  "description": "A frontend storage library with cascading fallback and expiration support",
+  "type": "module",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "format": "prettier **/*.{js,ts,json,md} -w",
+    "format:check": "prettier **/*.{js,ts,json,md} --check",
+    "lint": "eslint src/**/*.ts --quiet",
+    "lint:fix": "eslint src/**/*.ts --quiet --fix",
+    "prepare": "husky",
+    "preinstall": "npx only-allow bun",
+    "prepublishOnly": "tsc -p tsconfig.build.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yujiosaka/cascade-storage.git"
+  },
+  "keywords": [
+    "frontend",
+    "storage",
+    "cookie",
+    "localstorage",
+    "sessionstorage"
+  ],
+  "author": "Yuji Isobe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yujiosaka/cascade-storage/issues"
+  },
+  "homepage": "https://github.com/yujiosaka/cascade-storage#readme",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "basil.js": "^0.4.11"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.18.0",
+    "@happy-dom/global-registrator": "^16.6.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.1",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
+    "@types/basil.js": "^0.4.0",
+    "@types/bun": "latest",
+    "date-fns": "^4.1.0",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.1",
+    "prettier": "^3.4.2",
+    "typescript-eslint": "^8.21.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix"
+    ],
+    "**/*.{js,ts,json,md}": [
+      "prettier --write"
+    ]
+  }
+}
