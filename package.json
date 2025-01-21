@@ -1,6 +1,6 @@
 {
   "name": "cascade-storage",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A frontend storage library with cascading fallback and expiration support",
   "type": "module",
   "module": "dist/index.js",
